@@ -1,0 +1,653 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+}
+
+:root {
+  --white: #fff;
+  --grey: #404040;
+  --darkgrey: #262626;
+  --black: #000;
+  --green: #13f2a0;
+  --darkgreen: #0b9160;
+  --pink: #f21365;
+  font-size: 24px; /*root font size*/
+}
+
+/*semantic elements*/
+
+body {
+  background-color: var(--grey);
+  font-family: "Cascadia Code", Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+header {
+  background-color: var(--darkgrey);
+  color: var(--white);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+main {
+  margin: 0 10px;
+}
+
+main div, form label {
+  margin: 6px 22px;
+}
+
+div p {
+  margin: 4px 6px;
+  padding: 0 40px;
+}
+
+footer {
+  background-color: var(--pink);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+a {
+  padding: 0 8px;
+}
+
+a:link {
+  color: var(--green);
+}
+
+a:link.text-black {
+  color: var(--black);
+}
+
+a:visited {
+  color: var(--pink);
+}
+
+a:hover {
+  background-color: var(--white);
+  color: var(--darkgrey);
+}
+
+a:active {
+  background-color: var(--pink);
+  color: var(--darkgrey);
+}
+
+a:link.active-tab, a:visited.active-tab, a:hover.active-tab, a:active.active-tab {
+  background-color: var(--pink);
+  color: var(--darkgrey);
+}
+
+a:link.hidden-link, a:visited.hidden-link, a:hover.hidden-link, a:active.hidden-link {
+  background-color: transparent;
+}
+
+button {
+  background-color: var(--grey);
+  color: var(--white);
+  font-family: "Cascadia Code", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  border: 3px solid var(--darkgrey);
+  margin-top: 6px;
+  padding: 5px 20px;
+}
+
+button:hover {
+  background-color: var(--darkgreen);
+}
+
+button:active, .active {
+  background-color: var(--pink);
+}
+
+textarea {
+  height: 200px;
+  font-size: 24px;
+  margin: 5px 70px 10px;
+  resize: none;
+  text-align: left;
+}
+
+/*ids*/
+
+#welcome p {
+  margin: 24px 0;
+}
+
+#location-img {
+  height: 400px;
+}
+
+#menu-container {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+#event-container {
+  height: 800px;
+  margin: 0 20px;
+  overflow-y: auto;
+}
+
+#submit-form {
+  font-family: "Cascadia Code", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  background-color: var(--green);
+  border: 1px solid var(--black);
+  margin-bottom: 10px;
+  padding: 5px 20px;
+}
+
+#submit-form:hover {
+  background-color: var(--darkgreen);
+}
+
+#submit-form:active {
+  background-color: var(--pink);
+}
+
+#data-form {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/*classes*/
+
+.hamburger-container {
+  display: none;
+}
+
+.big-title {
+  font-size: 2rem;
+}
+
+.active-tab {
+  background-color: var(--white);
+}
+
+.box {
+  background-color: var(--darkgrey);
+  color: var(--white);
+}
+
+.box-green {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.box-image {
+  background-image: url(img/image3.jpeg);
+  background-color: rgba(196, 196, 196, 0.6);
+  background-blend-mode: lighten;
+}
+
+.box-image-two {
+  background-image: url(img/image2.png);
+  background-color: rgba(196, 196, 196, 0.6);
+  background-blend-mode: lighten;
+}
+
+.narrow {
+  margin: 8px 20px;
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.link-image {
+  background-color: var(--darkgrey);
+}
+
+.image-gallery-item img {
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 20px;
+}
+
+.socialmedia img {
+  height: 100px;
+  width: 100px;
+  margin: 0 20px;
+}
+
+.page-summary-text {
+  padding: 20px 50px 10px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.menu-title {
+  font-weight: bold;
+}
+
+/*grids*/
+
+/*pagetitle grid configuration */
+
+#logo {grid-area: logo;}
+#pagetitle-1 {grid-area: title-1;}
+#pagetitle-2 {grid-area: title-2;}
+
+#pagetitle-container {
+  display: grid;
+  justify-items: center;
+  grid-template-areas:
+  "logo title-1 title-1"
+  "logo title-2 title-2";
+}
+
+#pagetitle-container img {
+  max-height: 160px;
+  margin-bottom: 10px;
+}
+
+#image-gallery {
+  display: flex;
+  justify-content: center;
+}
+
+#socialcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+/*menu grid*/
+
+.menu {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.menu p {
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+.menu p.menu-title {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.stretched-item {
+  grid-column: 1 / span 2;
+}
+
+/*game database grid*/
+
+#game-database {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-height: 600px;
+  margin: 6px 0;
+  overflow-y: auto;
+}
+
+#game-database p {
+  font-size: 0.75rem;
+  margin: 0 0 16px 0;
+}
+
+#game-database .menu-title {
+  font-size: 1rem;
+}
+
+/*event listing grid*/
+
+.event-date {grid-area: event-date;}
+.event-name {grid-area: event-name;}
+.event-description {grid-area: event-description;}
+.event-time {grid-area: event-time;}
+
+.event-listing {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: 
+  "event-date event-name event-time"
+  "event-description event-description event-description";
+}
+
+/*form grid*/
+
+#recommend-form {
+  display: grid;
+}
+
+/*media queries*/
+/*list - 382px - phone portrait, 666px - big phone portrait, 768px - phone landscape, min 768px and max 1046px, 1398px*/
+
+@media only screen and (max-width: 1398px) {
+
+  /*semantic elements*/
+
+  main div, form label {
+    margin: 6px 20px;
+  }
+
+  textarea {
+    margin: 5px 50px 10px;
+  }
+
+  /*ids*/
+
+  #event-container {
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 1046px) {
+
+  main div, form label {
+    margin: 6px 16px;
+  }
+
+  textarea {
+    margin: 5px 30px 10px;
+  }
+
+  /*ids*/
+
+  #event-container {
+    margin: 0;
+  }
+
+  /*classes*/
+
+  .image-gallery-item img {
+    height: 220px;
+    width: 220px;
+    margin: 0 16px;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  /*semantic elements */
+
+  nav {
+    display: none;
+  }
+
+  button {
+    font-size: 20px;
+  }
+
+  main div, form label {
+    margin: 6px 12px;
+  }
+
+  textarea {
+    margin: 5px 20px 10px;
+  }
+
+  /*hamburger menu*/
+
+  .hamburger-container { 
+    display: block;
+    position: fixed;
+    pointer-events: none; /*this has to be on "none" otherwise buttons on specific pages will be unable to be hovered and clicked*/
+  }
+
+  .hamburger {
+    z-index: 1;
+  }
+  
+  .hamburger input[type="checkbox"] {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    pointer-events: auto; /*this is turned on so hamburger can be clickable - otherwise it won't click*/
+    z-index: 3;
+    opacity: 0;
+  }
+  
+  .hamburger span { /*i want to make the position: fixed but doing so makes it look different - would have to edit transform values*/
+    display: block;
+    position: relative;
+    top: 8px;
+    width: 33px;
+    height: 4px;
+    background-color: var(--white);
+    border: 1px solid var(--darkgrey);
+    border-radius: 10px;
+    margin: 5px 5px;
+    transform-origin: 4px;
+    z-index: 2;
+  }
+  
+  .hamburger input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+  }
+  
+  .hamburger input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger-links {
+    background-color: var(--pink);
+    /*position: fixed;*/
+    min-height: 50px;
+    min-width: 350px;
+    font-size: 2em;
+    list-style: none;
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    margin: -100px -45px -55px;
+    padding: 125px 50px 65px;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  }
+  
+  .hamburger-links a:link {
+    color: var(--darkgrey);
+    float: left;
+    padding: 0 10px 0;
+    pointer-events: auto; /*turned on so links are clickable*/
+  }
+
+  .hamburger-links a:visited {
+    color: var(--grey);
+  }
+
+  .hamburger-links a:hover {
+    background-color: var(--green);
+    color: var(--black);
+  }
+
+  .hamburger-links a:active {
+    background-color: var(--darkgrey);
+    color: var(--white);
+  }
+  
+  .hamburger input:checked ~ div {
+    transform: none;
+  }
+
+  .active-hamburger, .active-hamburger:hover {
+    background-color: var(--pink);
+  }
+
+  /*end of hamburger menu*/
+
+  /*ids*/
+
+  #pagetitle-container img {
+    max-height: 200px;
+    margin-left: 6px;
+    margin-bottom: 0;
+  }
+
+  #submit-form {
+    font-size: 26px;
+  }
+
+  /*classes*/
+
+  .big-title {
+    font-size: 1.5rem;
+  }
+
+  .image-gallery-item img {
+    height: 180px;
+    width: 180px;
+    /*edit size of photos for other media queries*/
+    /*225px*/
+  }
+
+  .socialmedia img {
+    height: 80px;
+    width: 80px;
+    margin: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 666px) {
+
+  /*semantic elements*/
+
+  body {
+    font-size: 0.85rem; /*configure this based on root element*/
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  main div, form label {
+    margin: 6px 10px;
+  }
+
+  /*ids*/
+
+  #location-img {
+    height: 450px;
+  }
+
+  #submit-form {
+    font-size: 20px;
+    width: 160px;
+  }
+
+  /*classes*/
+
+  .image-gallery-item img {
+    height: 140px;
+    width: 140px;
+    margin: 0 8px;
+  }
+
+  .socialmedia img {
+    height: 50px;
+    width: 50px;
+    margin: 0 6px;
+  }
+
+  /*grids*/
+
+  /*pagetitle grid*/
+
+  #pagetitle-container {
+    grid-template-columns: 1fr 4fr;
+    margin: 0 0 0 40px;
+  }
+
+  #pagetitle-container img {
+    max-height: 150px;
+    margin-left: 0;
+  }
+
+  /*form grid*/
+
+}
+
+@media only screen and (max-width: 494px) {
+
+  button {
+    font-size: 16px;
+  }
+
+  #submit-form {
+    font-size: 16px;
+  }
+
+  .image-gallery-item img {
+    height: 120px;
+    width: 120px;
+    margin: 0 6px;
+  }
+
+}
+
+@media only screen and (max-width: 368px) {
+
+  body {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+
+  #pagetitle-container {
+    display: block;
+    margin: 0 0 0 10px;
+  }
+
+  /*classes*/
+
+  .image-gallery-item img {
+    height: 90px;
+    width: 90px;
+  }
+  
+}
